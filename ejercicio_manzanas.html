@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleEjercicio2.css">
+    <title>Numero de frutas</title>
+    <script>
+        function verificarValores() {
+            const manzanas = document.getElementById("manzanas").value;
+            const peras = document.getElementById("peras").value;
+            const duraznos = document.getElementById("duraznos").value;
+                
+            document.getElementById("resultado").innerText = "La cantidad de manzanas es: " + manzanas+ 
+            " \n La cantidad de peras es: "+ peras + " \n La cantidad de duraznos es: " +duraznos;
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Numero de frutas</h1>
+    <div class="textoInput"><label for="valores">Ingresa el numero de manzanas</label><br></div>
+    <input type="number" id="manzanas" class="valores"><br><br>
+    
+    <div class="textoInput"><label for="valores">Ingresa el numero de peras</label><br></div>
+    <input type="number" id="peras" class="valores"><br><br>
+
+    <div class="textoInput"><label for="valores">Ingresa el numero de duraznos</label><br></div>
+    <input type="number" id="duraznos" class="valores"><br><br>
+    
+    <button class="my-button" onclick="verificarValores()">Obtener cantidades</button>
+    
+    <h4 id="resultado"></h4>
+</body>
+</html>

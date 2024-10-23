@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleEjercicio3.css">
+    <title>Agrupar Perros y Gatos</title>
+
+    <script>
+        function agruparAnimales() {
+
+            const animales = document.getElementById("animales").value;
+            const animalesArray = animales.split(" "); 
+
+            const perros = animalesArray.filter(animal => animal.toLowerCase() === 'perro');
+            const gatos = animalesArray.filter(animal => animal.toLowerCase() === 'gato');
+
+            const resultadoTabla = document.getElementById("resultado");
+            resultadoTabla.innerHTML = ""; 
+
+            const filaPerros = document.createElement("td");
+            const celdaPerros = document.createElement("tr");
+            celdaPerros.innerHTML = perros.length > 0 ? perros.join(", ") : "No hay perros.";
+            filaPerros.appendChild(document.createElement("th")).innerText = "Perros";
+            filaPerros.appendChild(celdaPerros);
+            resultadoTabla.appendChild(filaPerros);
+
+            const filaGatos = document.createElement("td");
+            const celdaGatos = document.createElement("tr");
+            celdaGatos.innerHTML = gatos.length > 0 ? gatos.join(", ") : "No hay gatos.";
+            filaGatos.appendChild(document.createElement("th")).innerText = "Gatos";
+            filaGatos.appendChild(celdaGatos);
+            resultadoTabla.appendChild(filaGatos);
+        }
+    </script>
+</head>
+<body>
+    <h1>Agrupar Perros y Gatos</h1>
+    <div class="textoInput"><label for="animales">Ingresa una lista de 'perros' y 'gatos', separados por espacios:</label><br></div>
+    <input type="text" id="animales" class="valores"><br><br>
+    
+    <button class="my-button" onclick="agruparAnimales()">Agrupar</button>
+    
+    <table id="resultado">
+        <tr>
+            
+        </tr>
+    </table>
+</body>
+</html>

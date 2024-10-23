@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Valor en Lista</title>
+    <link rel="stylesheet" href="styleEjercicio1.css">
+    <script>
+        function verificarValores() {
+            const valores = document.getElementById("valores").value.split(" ");
+            const valorABuscar = document.getElementById("valorABuscar").value;
+
+            if (valores.includes(valorABuscar)) {
+                document.getElementById("resultado").innerText = "El valor " + valorABuscar+ " se encuentra en la lista.";
+            } else {
+                document.getElementById("resultado").innerText = "El valor " + valorABuscar+ " NO se encuentra en la lista.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificar si un valor existe en la lista</h1>
+    <div class="textoInput"><label for="valores">Ingresa los valores separados por espacios:</label><br></div>
+    <input type="text" id="valores" class="valores"><br><br>
+    
+    <div class="textoInput"><label for="valorABuscar">¿Qué valor deseas averiguar si existe?</label><br></div>
+    <input type="text" id="valorABuscar" class="valorABuscar"><br><br>
+    
+    <button class="my-button" onclick="verificarValores()">Verificar</button>
+    
+    <h4 id="resultado"></h4>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleManzanas.css">
+    <title>Contar Frutas</title>
+    <script>
+        function contarFrutas() {
+            const entrada = document.getElementById("frutas").value;
+            const frutasArray = entrada.split(" ");
+
+            const manzanas = frutasArray.filter(fruta => fruta.toLowerCase() === 'manzana').length;
+            const peras = frutasArray.filter(fruta => fruta.toLowerCase() === 'pera').length;
+            const duraznos = frutasArray.filter(fruta => fruta.toLowerCase() === 'durazno').length;
+
+            document.getElementById("resultado").innerText = `
+                Manzanas: ${manzanas}, Peras: ${peras}, Duraznos: ${duraznos}
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Contar Frutas</h1>
+    <div class="textoInput"><label for="frutas">Ingresa una lista de frutas (manzana, pera, durazno), separadas por espacios:</label><br></div>
+    <input type="text" id="frutas" class="valores"><br><br>
+    
+    <button class="my-button" onclick="contarFrutas()">Contar Frutas</button>
+    
+    <h4 id="resultado"></h4>
+</body>
+</html>
